@@ -3,4 +3,5 @@ import Footer from "./Footer";
 import Wrapper from "./Wrapper";
 import Menu from "./Menu";
 import MobileMenu from "./MobileMenu";
-export { Header, Footer, Wrapper, Menu, MobileMenu };
+import Banner from "./Banner";
+export { Header, Footer, Wrapper, Menu, MobileMenu, Banner };
