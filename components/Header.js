@@ -7,12 +7,22 @@ import {
   Bars4Icon,
   XCircleIcon,
 } from "@heroicons/react/24/outline";
+import { fetchData } from "@/libs/api";
+
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCat, setShowCat] = useState(false);
   const [show, setShow] = useState("translate-y-0");
   const [latScroolY, setLastscrollY] = useState(0);
   const [categories, setCategories] = useState(null);
+
+  useEffect(() => {
+    fetchCategiries();
+  }, []);
+  const fetchCategiries = async () => {
+    const { data } = await fetchData("/api/categories?populate=*");
+    setCategories(data);
+  };
   return (
     <header
       className={`w-full, h-[50px] md:h-[80px] flex items-center justify-between`}
@@ -21,7 +31,11 @@ const Header = () => {
         <Link href="/">
           <img src="./sneaker_logo.png" className="w-[40px] md:w-[60px]" />
         </Link>
-        <Menu showCat={showCat} setShowCat={setShowCat} />
+        <Menu
+          showCat={showCat}
+          setShowCat={setShowCat}
+          categories={categories}
+        />
         {mobileMenu && (
           <MobileMenu
             showCat={showCat}

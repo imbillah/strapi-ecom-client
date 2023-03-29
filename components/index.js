@@ -4,4 +4,5 @@ import Wrapper from "./Wrapper";
 import Menu from "./Menu";
 import MobileMenu from "./MobileMenu";
 import Banner from "./Banner";
-export { Header, Footer, Wrapper, Menu, MobileMenu, Banner };
+import ProductCard from "./ProductCard";
+export { Header, Footer, Wrapper, Menu, MobileMenu, Banner, ProductCard };

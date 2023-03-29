@@ -8,13 +8,7 @@ const menudata = [
   { id: 4, name: "Contact", url: "/contact" },
 ];
 
-const subMenuData = [
-  { id: 1, name: "Jordan", doc_count: 11 },
-  { id: 2, name: "Sneakers", doc_count: 8 },
-  { id: 3, name: "Running shoes", doc_count: 64 },
-  { id: 4, name: "Football shoes", doc_count: 107 },
-];
-const Menu = ({ showCat, setShowCat }) => {
+const Menu = ({ showCat, setShowCat, categories }) => {
   return (
     <ul className="hidden md:flex items-center gap-8 font-medium text-black">
       {menudata.map((item) => {
@@ -29,17 +23,19 @@ const Menu = ({ showCat, setShowCat }) => {
                 {item.name}
                 <ChevronDownIcon className="h-5 w-5" />
                 {showCat && (
-                  <ul className="absolute top-6 left-0 min-w-[250px] p-2 shadow-lg rounded-md bg-white">
-                    {subMenuData.map((submenu) => {
+                  <ul className="absolute top-6 left-0 min-w-[250px] p-2 shadow-lg rounded-md bg-white z-20">
+                    {categories?.map(({ attributes: c, id }) => {
                       return (
                         <Link
-                          href="/"
-                          key={submenu.id}
+                          href={`/category/${c.slug}`}
+                          key={id}
                           onClick={() => setShowCat(false)}
                         >
                           <li className="h-12 flex justify-between p-3 hover:bg-black/[0.3] hover:rounded-sm ">
-                            {submenu.name}
-                            <span className="text-sm opacity-50">18</span>
+                            {c.name}
+                            <span className="text-sm opacity-50">
+                              {`(${c.products.data.length})`}
+                            </span>
                           </li>
                         </Link>
                       );

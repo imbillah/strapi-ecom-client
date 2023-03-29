@@ -19,7 +19,7 @@ const slideData = [
 ];
 const Banner = () => {
   return (
-    <div className="relative text-white w-full max-w-[1200px] mx-auto text-[20px] my-3">
+    <div className="relative text-white w-full max-w-[1200px] mx-auto text-[20px] my-3 z-0">
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
