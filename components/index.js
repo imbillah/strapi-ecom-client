@@ -5,4 +5,16 @@ import Menu from "./Menu";
 import MobileMenu from "./MobileMenu";
 import Banner from "./Banner";
 import ProductCard from "./ProductCard";
-export { Header, Footer, Wrapper, Menu, MobileMenu, Banner, ProductCard };
+import RelatedProducts from "./RelatedProducts";
+import ProductCarousel from "./ProductCarousel";
+export {
+  Header,
+  Footer,
+  Wrapper,
+  Menu,
+  MobileMenu,
+  Banner,
+  ProductCard,
+  RelatedProducts,
+  ProductCarousel,
+};
