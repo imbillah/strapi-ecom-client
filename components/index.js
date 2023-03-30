@@ -7,6 +7,7 @@ import Banner from "./Banner";
 import ProductCard from "./ProductCard";
 import RelatedProducts from "./RelatedProducts";
 import ProductCarousel from "./ProductCarousel";
+import CartItems from "./CartItems";
 export {
   Header,
   Footer,
@@ -17,4 +18,5 @@ export {
   ProductCard,
   RelatedProducts,
   ProductCarousel,
+  CartItems,
 };
