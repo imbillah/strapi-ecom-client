@@ -31,7 +31,7 @@ const Menu = ({ showCat, setShowCat, categories }) => {
                           key={id}
                           onClick={() => setShowCat(false)}
                         >
-                          <li className="h-12 flex justify-between p-3 hover:bg-black/[0.3] hover:rounded-sm ">
+                          <li className="h-12 flex justify-between p-3 hover:bg-gray-200 hover:rounded-sm ">
                             {c.name}
                             <span className="text-sm opacity-50">
                               {`(${c.products.data.length})`}
